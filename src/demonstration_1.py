@@ -32,17 +32,35 @@ class ListNode:
 
 class MyHashTable:
     def __init__(self):
-        # Your code here
+    # define the array and its finite size 
+        self.array = [None] * 20
+        
 
 
     def put(self, key, value):
-        # Your code here
+    # use baked in hash() function to hash the key
+        hash_key = hash(key) 
+    # map the hashed key to an index in the array 
+        index = hash_key % len(self.array)
+    # put the value in the array at that index 
+        self.array[index] = value
 
 
     def get(self, key):
-        # Your code here
+    # return the value of the index at the index of the key 
+        hash_key = hash(key)
+    # hash the key, map it to the index 
+        index = hash_key % len(self.array)
+    # handling instance where there is no item in the index 
+        if self.array[index] is None:
+            return -1
+    # return the value at that index
+        return self.array[index]
 
 
     def remove(self, key: int) -> None:
-        # Your code here
+        hash_key = hash(key)
+        index = hash_key % len(self.array)
+        self.array[index] = None
+
 
