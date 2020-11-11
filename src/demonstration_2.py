@@ -72,7 +72,7 @@ PLAN:
 """
 
 
-def are_words_sorted(words, alpha_order):
+# def are_words_sorted(words, alpha_order):
     # create dictionary with input 
 
     # for item in list 
@@ -95,7 +95,7 @@ def are_words_sorted(words, alpha_order):
     for i in range(len(alpha_order)):
         character = alpha_order[i]
         alphabet_dict[character] = i
-    
+
     for word_idx in range(len(words) - 1):
         # define the cur_word and next_word
         word_a = words[word_idx]
